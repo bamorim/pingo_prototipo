@@ -20,7 +20,7 @@ defmodule Pingo.RegistrationController do
         |> redirect(to: "/")
       {:error, changeset} ->
         conn
-        |> put_flash(:info, "Erro ao se cadastrar")
+        |> put_flash(:error, "Erro ao se cadastrar")
         |> render("new.html", changeset: changeset)
     end
   end

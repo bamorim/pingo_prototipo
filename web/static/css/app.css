@@ -1,1 +1,91 @@
-/* This file is for your main application css. */
+:root{
+	--color-primary-0: #8EAFE3;	/* Main Primary color */
+	--color-primary-1: #C6D9F8;
+	--color-primary-2: #A9C4EF;
+	--color-primary-3: #769AD3;
+	--color-primary-4: #5E84BF;
+
+	--color-secondary-1-0: #A193E5;	/* Main Secondary color (1) */
+	--color-secondary-1-1: #D0C8F8;
+	--color-secondary-1-2: #B8ADF0;
+	--color-secondary-1-3: #8B7BD7;
+	--color-secondary-1-4: #7565C4;
+
+	--color-secondary-2-0: #84E0D1;	/* Main Secondary color (2) */
+	--color-secondary-2-1: #C0F7EE;
+	--color-secondary-2-2: #A1EEE1;
+	--color-secondary-2-3: #6ACFBE;
+	--color-secondary-2-4: #52B9A8;
+}
+/* Palette URL: http://paletton.com/#uid=53G0u0kmQDhhANKknIIpdyus7uS */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+	background-color: var(--color-primary-1);
+	border-color: var(--color-primary-4);
+}
+
+.btn-default {
+	background-color: var(--color-primary-1);
+	border-color: var(--color-primary-0);
+}
+
+.btn-primary {
+	background-color: var(--color-primary-4);
+}
+
+.btn-success {
+	background-color: var(--color-secondary-2-4);
+	border-color: var(--color-secondary-2-4);
+}
+
+.signin-body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(--color-primary-1);
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.alert:empty {
+  display: none;
+}
