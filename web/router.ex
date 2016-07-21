@@ -9,16 +9,25 @@ defmodule Pingo.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_auth do  
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", Pingo do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :browser_auth] # Use the default browser stack
 
     get "/", PageController, :index
 
     resources "/registrations", RegistrationController, only: [:new, :create]
+
+    get "/login", SessionController, :new, as: :login
+    post "/login", SessionController, :create, as: :login
+    get "/logout", SessionController, :delete, as: :logout
   end
 
   # Other scopes may use custom stacks.

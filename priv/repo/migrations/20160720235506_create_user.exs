@@ -3,7 +3,7 @@ defmodule Pingo.Repo.Migrations.CreateUser do
 
   def change do
     create table(:users) do
-      add :username, :string
+      add :username, :string, unique: true
       add :encrypted_password, :string
 
       timestamps()
