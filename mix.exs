@@ -39,7 +39,10 @@ defmodule Pingo.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.5"},
-     {:guardian, "~> 0.12.0"}]
+     {:guardian, "~> 0.12.0"},
+     {:ex_admin, github: "bamorim/ex_admin", branch: "bamorim-avoid-stringify-struct"},
+     {:arc_ecto, github: "stavro/arc_ecto"},
+     {:ex_queb, github: "E-MetroTel/ex_queb", override: true}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

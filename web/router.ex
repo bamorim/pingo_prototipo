@@ -1,5 +1,6 @@
 defmodule Pingo.Router do
   use Pingo.Web, :router
+  use ExAdmin.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -9,7 +10,7 @@ defmodule Pingo.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :browser_auth do  
+  pipeline :browser_auth do
     plug Guardian.Plug.VerifySession
     plug Guardian.Plug.LoadResource
   end
@@ -19,7 +20,7 @@ defmodule Pingo.Router do
   end
 
   scope "/", Pingo do
-    pipe_through [:browser, :browser_auth] # Use the default browser stack
+    pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
 
@@ -30,8 +31,8 @@ defmodule Pingo.Router do
     get "/logout", SessionController, :delete, as: :logout
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Pingo do
-  #   pipe_through :api
-  # end
+  scope "/admin", ExAdmin do
+    pipe_through :browser
+    admin_routes
+  end
 end

@@ -28,7 +28,17 @@ config :guardian, Guardian,
   secret_key: "TODO: this is not a secret",
   serializer: Pingo.GuardianSerializer
 
+config :ex_admin,
+  repo: Pingo.Repo,
+  module: Pingo,
+  modules: [
+    Pingo.ExAdmin.Dashboard,
+    Pingo.ExAdmin.Campaign
+  ]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+config :xain, :after_callback, {Phoenix.HTML, :raw}
+

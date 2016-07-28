@@ -49,6 +49,7 @@ defmodule Pingo.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
+      import Pingo.AssetHelper
       import Pingo.Router.Helpers
       import Pingo.ErrorHelpers
       import Pingo.Gettext
