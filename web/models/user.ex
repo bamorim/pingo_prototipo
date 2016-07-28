@@ -21,6 +21,7 @@ defmodule Pingo.User do
     |> validate_required(@required_fields)
     |> validate_length(:username, min: 2)
     |> validate_length(:password, min: 6)
+    |> unique_constraint(:username)
   end
 
   def encrypt_password(changeset) do
